@@ -1,0 +1,51 @@
+{
+  "name": "stated-promise",
+  "version": "0.0.0",
+  "description": "StatedPromise provides a couple of methods for querying Promise state.",
+  "main": "dist/index.js",
+  "scripts": {
+    "preversion": "npm test && npm run docs-auto",
+    "prepack": "NODE_ENV=production npm run build",
+    "build": "del-cli dist && tsc",
+    "prepare": "husky install",
+    "docs": "typedoc src/index.ts",
+    "docs-auto": "npm run docs && git add -A docs && git diff-index --quiet HEAD || git commit -m 'docs: update'",
+    "test": "ava"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^17.0.35",
+    "@typescript-eslint/eslint-plugin": "^5.25.0",
+    "@typescript-eslint/parser": "^5.25.0",
+    "ava": "^4.2.0",
+    "del-cli": "^5.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.4",
+    "prettier": "^2.6.2",
+    "ts-node": "^10.5.0",
+    "typedoc": "^0.22.15",
+    "typedoc-plugin-markdown": "^3.12.1",
+    "typescript": "^4.6.4"
+  },
+  "ava": {
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ],
+    "*.{md}": "prettier --write"
+  },
+  "types": "dist/index.d.ts",
+  "files": [
+    "src",
+    "dist"
+  ]
+}

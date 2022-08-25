@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.eslint.json",
+  "compilerOptions": {
+    "sourceMap": false,
+    "declaration": true,
+    "module": "commonjs"
+  },
+  "include": ["./src/**/*"]
+}
