@@ -12,6 +12,7 @@
     "docs-auto": "npm run docs && git add -A docs && git diff-index --quiet HEAD || git commit -m 'docs: update'",
     "test": "ava"
   },
+  "homepage": "https://github.com/chrisyip/stated-promise#readme",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^17.0.35",
